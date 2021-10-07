@@ -1,0 +1,71 @@
+.TH _printf 3 "31 July 2019" "version 1.0"
+
+.SH NAME
+
+    _printf - Prints to stdout!
+
+.SH SYNOPSIS
+
+.B #include “main.h”
+.PP
+.B #include <stdarg.h>
+.PP
+.B int printf (const char *
+.I format
+.B , ...);
+
+.SH DESCRIPTION
+The function
+.B _printf()
+produces output according to a format as described below. It writes output to stdout, the standard output stream. All output is written under the control of a format string. This specifies how subsequent arguments are converted for output. It also specifies how arguments accessed via stdarg facilities are converted for output. 
+.PP
+.SH Return value
+Upon successful return, this function returns the number of characters printed (excluding the null byte used to end output to strings).
+.PP
+.SH Format of the format string
+The format string is a character string composed of zero or more directives. Ordinary characters (except %) are copied unchanged to output. %
+.I [character] 
+is a conversion specifier, the argument of which will be fetched. 
+.PP
+.SH Conversion specifiers
+.B b
+The int argument is converted to signed binary notation, and is written.
+
+.B c 
+The int argument is converted to an unsigned char, and is written.
+
+.B d 
+The int argument is converted to signed decimal notation, and is written.
+
+.B i 
+The int argument is converted to signed decimal notation, and is written.
+
+.B r 
+The char* argument of a pointer to an array of characters is reversed, and is written.
+
+.B R
+The char* argument of a pointer to an array of characters is encoded using the ROT13 cipher, and is written.
+
+.B s 
+The char* argument of a pointer to an array of characters is written.
+
+.B % 
+A ‘%’ is written. No argument is converted. 
+.I ‘%%’
+is complete specification.
+.PP
+.SH OPTIONS
+.PP
+.SH BUGS
+
+    -b flag does not work in all cases
+
+.SH AUTHORS
+
+Mada
+
+Okpala
+
+.SH SEE ALSO
+
+    printf(1), asprintf(3), puts(3), scanf(3), setlocal(3), strfromd(3), wcrtomb(3), wprintf(3), locale(5)
